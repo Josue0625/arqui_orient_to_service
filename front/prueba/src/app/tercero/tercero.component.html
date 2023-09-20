@@ -1,0 +1,26 @@
+<div>
+    <form (ngSubmit)="enviar()" [formGroup]="formulario">
+        <div ngClass="groupInput">
+            <label for="nombre"> Nombre</label>
+            <input name="nombre" id="nombre" formControlName="nombre" />
+            <span ngClass="error">Nombre requerido</span>
+        </div>
+        <div ngClass="groupInput">
+            <label for="valor">Valor</label>
+            <input type="text" name="valor" id="valor" formControlValor="valor" />
+            <span *ngIf="formulario.get('valor')?.errors?.['required']" ngClass="error">Valor Requerido </span> 
+            <span *ngIf="formulario.get('valor')?.errors?.['pattern']" ngClass="error" >Valor Requerido</span> 
+        </div>
+        <div>
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+</div>
+
+{{nombre.value}} <br>
+{{formulario.get("valor")?.pristine}} <br>
+{{formulario.get("valor")?.errors  | json}} <br>
+{{formulario.get("valor")?.errors?.['required']}} <br>
+
+
+
