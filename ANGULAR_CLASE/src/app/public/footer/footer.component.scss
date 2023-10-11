@@ -1,0 +1,14 @@
+footer {
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  footer a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  footer a:hover {
+    color: #ffc107; /* Cambia el color al pasar el mouse */
+  }

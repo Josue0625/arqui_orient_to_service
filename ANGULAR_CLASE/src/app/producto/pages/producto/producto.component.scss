@@ -1,0 +1,14 @@
+.flex{
+    display: flex;
+    flex-direction: row;
+    div{
+        padding: 0.2em;
+        width: 100%;
+    }
+    .rojo{
+        background-color: rgb(186, 170, 255);
+    }
+    .azul{
+        background-color: rgb(252, 144, 140);
+    }
+}
