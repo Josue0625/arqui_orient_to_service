@@ -8,8 +8,23 @@ export class MsgServiceService {
 
   constructor() { }
 
-  mensaje : string[] = [];
-  set(msg:string){
-    this.mensaje.push(msg)
+  mensajesCrear: string[] = [];
+  mensajesConsultar: string[] = [];
+
+  set(mensaje: string, componente: string) {
+    if (componente === 'crear') {
+      this.mensajesCrear.push(mensaje);
+    } else if (componente === 'consultar') {
+      this.mensajesConsultar.push(mensaje);
+    }
+  }
+
+  getMensajes(componente: string): string[] {
+    if (componente === 'crear') {
+      return this.mensajesCrear;
+    } else if (componente === 'consultar') {
+      return this.mensajesConsultar;
+    }
+    return [];
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { MsgServiceService } from '../../msg-service.service';
 
 @Component({
@@ -7,9 +7,14 @@ import { MsgServiceService } from '../../msg-service.service';
   styleUrls: ['./crear-producto.component.scss']
 })
 export class CrearProductoComponent {
-  constructor(public msgService : MsgServiceService){}
+  @ViewChild('miInput') input: ElementRef;
 
-  enviar(){
-    this.msgService.set("Hola")
+  constructor(public msgService : MsgServiceService){
+    this.input = new ElementRef(null);
+  }
+  
+
+  enviar(valorInput: string){
+    this.msgService.set(valorInput, 'consultar');
   }
 }

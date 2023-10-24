@@ -1,2 +1,7 @@
 <p>crear-producto works!</p>
-<button (click)="enviar()">Enviar</button>
+<input type="text" #texto id="texto" placeholder="Ingresar Texto">
+<button (click)="enviar(texto.value)">Enviar</button>
+
+<ul>
+    <li *ngFor="let m of msgService.getMensajes('crear')">{{m}}</li>
+</ul>
