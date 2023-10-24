@@ -1,1 +1,17 @@
 <p>formulario works!</p>
+<form [formGroup]="form" (submit)="submit()">
+    <div>
+        <label>Correo: </label>
+        <input type="text" id="email" name="email" formControlName="email"/>
+    </div>
+    <div>
+        <label>Contraseña: </label>
+        <input type="password" id="password" name="password" formControlName="password"/>
+    </div>
+    <div>
+        <button type="submit">Enviar</button>
+    </div>
+    <div>
+        <button type="button" (click)="obtener()">Obtener</button>
+    </div>
+</form>
