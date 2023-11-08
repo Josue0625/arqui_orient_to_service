@@ -1,9 +1,13 @@
-<p>consultar-producto works!</p>
+<!-- <p>consultar-producto works!</p>
 
 <input type="text" #texto id="texto" placeholder="Ingresar Texto">
 <button (click)="enviar(texto.value)">Enviar</button>
 
 <ul>
     <li *ngFor="let m of msgService.getMensajes('consultar')">{{m}}</li>
-</ul>
+</ul> -->
 
+<div>
+    <ng-content select="[titulo]"></ng-content>
+    <ng-content select="[imagen]"></ng-content>
+</div>

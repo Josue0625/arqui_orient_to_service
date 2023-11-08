@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 import { ProductoRoutingModule } from './producto-routing.module';
 import { ProductoComponent } from './pages/producto/producto.component';
@@ -19,7 +19,8 @@ import { EliminarProductoComponent } from './components/eliminar-producto/elimin
   ],
   imports: [
     CommonModule,
-    ProductoRoutingModule
+    ProductoRoutingModule,
+    NgOptimizedImage
   ]
 })
 export class ProductoModule { }

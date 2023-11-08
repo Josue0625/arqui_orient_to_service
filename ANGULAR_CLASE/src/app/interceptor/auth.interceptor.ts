@@ -6,14 +6,17 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import { Observable, finalize } from 'rxjs';
+import { LoaderService } from '../public/loader.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
-  constructor() {}
+  constructor(private load: LoaderService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    console.log("por aqui pase")
+
+
+    this.load.setActive();
 
     let cloneReq = request;
 
@@ -27,7 +30,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
     return next.handle(cloneReq).pipe(
       finalize(()=>{
-        console.log("1111111");
+        this.load.setInactive();
       })
     );
   }

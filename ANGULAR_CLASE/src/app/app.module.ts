@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './public/header/header.component';
 import { FooterComponent } from './public/footer/footer.component';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
+import { LoaderComponent } from './public/loader/loader.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

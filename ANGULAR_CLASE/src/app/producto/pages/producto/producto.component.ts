@@ -10,8 +10,11 @@ export class ProductoComponent implements OnInit{
 
   constructor(private productService : ProductServiceService){}
 
+  elementos : any = [];
+
   ngOnInit(){
     this.productService.getAll().subscribe((res : any)=>{
+      this.elementos = res
       console.log(res)
     })
   }
